@@ -10,134 +10,156 @@
     .botonRecordarPresionado {
       background-color: red;
     }
-
     .botonRecordarSinPresionar {
       background-color: green;
     }
   </style>
 </head>
 <body>
-  <h1>Vení al Gym!</h1>
-  <button id="botonCambiarEstilos">
-    Cambiar estilos
-  </button>
-  <button id="botonCambiarEstilosAleatorio">
-    Cambiar estilos (Aleatorio)
-  </button>
-  <button id="botonRecordarEstilos">
-    Recordar
-  </button>
-  <br>
-  <br>
-  <div>
-  <label for="selectEstilos">Seleccionar estilos:</label>
-    <select name="selectEstilos" id="selectEstilos">
-      <option value="estilos-predeterminados">Estilos predeterminados</option>
-      <option value="estilos-retro">Estilos Retro</option>
-      <option value="estilos-futuro">Estilos Futuro</option>
-      <option value="sin-estilos">Sin estilos</option>
-    </select>
-  </div>
-  <div>
-    <span>Seleccionar estilos:</span>
-    <input type="radio" name="radioEstilos" id="estilos-radio-predeterminado" value="estilos-radio-predeterminado">
-    <label for="estilos-radio-predeterminado">Estilos predeterminados</label>
-    <input type="radio" name="radioEstilos" id="estilos-radio-retro" value="estilos-radio-retro">
-    <label for="estilos-radio-retro">Estilos Retro</label>
-    <input type="radio" name="radioEstilos" id="estilos-radio-futuro" value="estilos-radio-futuro">
-    <label for="estilos-radio-futuro">Estilos Futuro</label>
-    <input type="radio" name="radioEstilos" id="estilos-radio-sin" value="estilos-radio-sin">
-    <label for="estilos-radio-sin">Sin estilos</label>
-  </div>
-  <br>
-  <form action="#">
-    <fieldset>
-      <legend>Datos Personales</legend>
-      <label for="nombre">Nombre:*</label>
-      <input type="text" id="nombre" name="nombre" required>
-      <br>
-      <label for="apellido">Apellido:*</label>
-      <input type="text" id="apellido" name="apellido" required>
-      <br>
-      <label for="documento">Documento:*</label>
-      <input type="number" id="documento" name="documento" required>
-      <br>
-      <label for="nacionalidad">Nacionalidad:*</label>
-      <select name="nacionalidad" id="nacionalidad">
-        <option value="seleccionar">- Seleccionar -</option>
-        <option value="argentina">Argentina</option>
-        <option value="brasileña">Brasileña</option>
-        <option value="uruguaya">Uruguaya</option>
-        <option value="otra">Otra</option>
-      </select>
-      <br>
-      <label for="informacion-adicional">Contanos un poco de vos...</label>
-      <textarea name="informacion-adicional" id="informacion-adicional"></textarea>
-      <br>
-      <div>
-        Sexo:*
-      </div>
-      <input type="radio" name="sexo" id="sexo-femenino" value="femenino" required>
-      <label for="sexo-femenino">Femenino</label>
-      <input type="radio" name="sexo" id="sexo-masculino" value="masculino" required>
-      <label for="sexo-masculino">Masculino</label>
-      <input type="radio" name="sexo" id="sexo-otro" value="otro" required>
-      <label for="sexo-otro">Otro</label>
-    </fieldset>
-    <fieldset>
-      <legend>Datos de Contacto</legend>
-      <label for="telefono">Teléfono:*</label>
-      <input
-        type="tel"
-        id="telefono"
-        name="telefono"
-        placeholder="Código de área y número"
-        required
-      >
-      <br>
-      <label for="email">Dirección de correo electrónico:*</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Ej: mail@gmail.com"
-        required
-      >
-    </fieldset>
-    <fieldset>
-      <legend>Actividades</legend>
-      <p>Por favor, indicá cuáles actividades te interesan.</p>
-      <p>Sede Palermo:</p>
-      <input type="checkbox" name="actividad-basquet-palermo" id="actividad-basquet-palermo" value="basquet-palermo">
-      <label for="actividad-basquet-palermo">Básquet</label>
-      <input type="checkbox" name="actividad-boxeo-palermo" id="actividad-boxeo-palermo" value="boxeo-palermo">
-      <label for="actividad-boxeo-palermo">Boxeo</label>
-      <input type="checkbox" name="actividad-futbol-palermo" id="actividad-futbol-palermo" value="futbol-palermo">
-      <label for="actividad-futbol-palermo">Fútbol</label>
-      <input type="checkbox" name="actividad-tenis-palermo" id="actividad-tenis-palermo" value="tenis-palermo">
-      <label for="actividad-tenis-palermo">Tenis</label>
-      <p>Sede Rosario:</p>
-      <input type="checkbox" name="actividad-basquet-rosario" id="actividad-basquet-rosario" value="basquet-rosario">
-      <label for="actividad-basquet-rosario">Básquet</label>
-      <input type="checkbox" name="actividad-futbol-rosario" id="actividad-futbol-rosario" value="futbol-rosario">
-      <label for="actividad-futbol-rosario">Fútbol</label>
-      <input type="checkbox" name="actividad-rugby-rosario" id="actividad-rugby-rosario" value="rugby-rosario">
-      <label for="actividad-rugby-rosario">Rugby</label>
-      <input type="checkbox" name="actividad-voley-rosario" id="actividad-voley-rosario" value="voley-rosario">
-      <label for="actividad-voley-rosario">Voley</label>
-    </fieldset>
-    <input type="checkbox" name="condiciones" id="condiciones" value="condiciones">
-    <label for="condiciones">Acepto las condiciones*</label>
+  <nav>
+    <button id="botonCambiarEstilos">
+      Cambiar estilos
+    </button>
+    <button id="botonCambiarEstilosAleatorio">
+      Cambiar estilos (Aleatorio)
+    </button>
+    <button id="botonRecordarEstilos">
+      Recordar
+    </button>
     <br>
-    <input type="checkbox" name="novedades" id="novedades" value="novedades" checked>
-    <label for="novedades">Deseo recibir novedades</label>
     <br>
-    <p>*: campo obligatorio.</p>
+    
     <div>
-      <button type="submit">Iniciar afiliación</button>
-      <button type="reset">Restablecer</button>
+    <label for="selectEstilos">Seleccionar estilos:</label>
+      <select name="selectEstilos" id="selectEstilos">
+        <option value="estilos-predeterminados">Estilos predeterminados</option>
+        <option value="estilos-retro">Estilos Retro</option>
+        <option value="estilos-futuro">Estilos Futuro</option>
+        <option value="sin-estilos">Sin estilos</option>
+      </select>
     </div>
-  </form>
+    <div>
+      <span>Seleccionar estilos:</span>
+      <input type="radio" name="radioEstilos" id="estilos-radio-predeterminado" value="estilos-radio-predeterminado">
+      <label for="estilos-radio-predeterminado">Estilos predeterminados</label>
+      <input type="radio" name="radioEstilos" id="estilos-radio-retro" value="estilos-radio-retro">
+      <label for="estilos-radio-retro">Estilos Retro</label>
+      <input type="radio" name="radioEstilos" id="estilos-radio-futuro" value="estilos-radio-futuro">
+      <label for="estilos-radio-futuro">Estilos Futuro</label>
+      <input type="radio" name="radioEstilos" id="estilos-radio-sin" value="estilos-radio-sin">
+      <label for="estilos-radio-sin">Sin estilos</label>
+    </div>
+    <br>
+  </nav>
+
+  <main class="main">
+      <h1 class="titulo">Vení al Gym!💪</h1>
+    <form action="#" class="formulario">
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">🙋‍♂️ Datos Personales 👀</legend>
+        <label for="nombre">Nombre:*</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="apellido">Apellido:*</label>
+        <input type="text" id="apellido" name="apellido" required>
+        
+        <label for="documento">Documento:*</label>
+        <input type="number" id="documento" name="documento" required>
+        
+        <label for="nacionalidad">Nacionalidad:*</label>
+        <select name="nacionalidad" id="nacionalidad">
+          <option value="seleccionar">- Seleccionar -</option>
+          <option value="argentina">Argentina</option>
+          <option value="brasileña">Brasileña</option>
+          <option value="uruguaya">Uruguaya</option>
+          <option value="otra">Otra</option>
+        </select>
+        
+        <label for="informacion-adicional">Contanos un poco de vos...</label>
+        <textarea name="informacion-adicional" id="informacion-adicional"></textarea>
+        
+        <div>
+          Sexo:*
+        </div>
+        <div>
+          <input type="radio" name="sexo" id="sexo-femenino" value="femenino" required>
+          <label for="sexo-femenino">Femenino</label>
+          <input type="radio" name="sexo" id="sexo-masculino" value="masculino" required>
+          <label for="sexo-masculino">Masculino</label>
+          <input type="radio" name="sexo" id="sexo-otro" value="otro" required>
+          <label for="sexo-otro">Otro</label>
+        </div>
+      </fieldset>
+      
+    <div class="dot-divider">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    </div>
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">📱 Datos de Contacto 📧</legend>
+        <label for="telefono">Teléfono:*</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="Código de área y número"
+          required>
+        
+        <label for="email">Dirección de correo electrónico:*</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ej: mail@gmail.com"
+          required
+        >
+      </fieldset>
+    
+    <div class="dot-divider">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    </div>
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">🚴 Actividades 🤸</legend>
+        <p>Por favor, indicá cuáles actividades te interesan.</p>
+        <p>Sede Palermo:</p>
+        <div>
+          <input type="checkbox" name="actividad-basquet-palermo" id="actividad-basquet-palermo" value="basquet-palermo">
+          <label for="actividad-basquet-palermo">Básquet</label>
+          <input type="checkbox" name="actividad-boxeo-palermo" id="actividad-boxeo-palermo" value="boxeo-palermo">
+          <label for="actividad-boxeo-palermo">Boxeo</label>
+          <input type="checkbox" name="actividad-futbol-palermo" id="actividad-futbol-palermo" value="futbol-palermo">
+          <label for="actividad-futbol-palermo">Fútbol</label>
+          <input type="checkbox" name="actividad-tenis-palermo" id="actividad-tenis-palermo" value="tenis-palermo">
+          <label for="actividad-tenis-palermo">Tenis</label>
+        </div>
+        <p>Sede Rosario:</p>
+        <div>
+          <input type="checkbox" name="actividad-basquet-rosario" id="actividad-basquet-rosario" value="basquet-rosario">
+          <label for="actividad-basquet-rosario">Básquet</label>
+          <input type="checkbox" name="actividad-futbol-rosario" id="actividad-futbol-rosario" value="futbol-rosario">
+          <label for="actividad-futbol-rosario">Fútbol</label>
+          <input type="checkbox" name="actividad-rugby-rosario" id="actividad-rugby-rosario" value="rugby-rosario">
+          <label for="actividad-rugby-rosario">Rugby</label>
+          <input type="checkbox" name="actividad-voley-rosario" id="actividad-voley-rosario" value="voley-rosario">
+          <label for="actividad-voley-rosario">Voley</label>
+        </div>
+      </fieldset>
+      <div>
+        <input type="checkbox" name="condiciones" id="condiciones" value="condiciones">
+        <label for="condiciones">Acepto las condiciones*</label>
+        <br>
+        <input type="checkbox" name="novedades" id="novedades" value="novedades" checked>
+        <label for="novedades">Deseo recibir novedades</label>
+        <br>
+        <p>*: campo obligatorio.</p>
+      </div>
+      <div>
+        <button type="submit">Iniciar afiliación</button>
+        <button type="reset">Restablecer</button>
+      </div>
+    </form>
+  </main>
 
   <script src="./js/index.js"></script>
 </body>
