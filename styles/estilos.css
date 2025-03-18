@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --color-fondo-body: #1F2023;
+  --color-fondo-legend-1: #4D6D63;
+  --color-fondo-legend-2: #2B3D37;
+  --color-fondo-fieldset-1: #D6E2DE;
+  --color-fondo-fieldset-2: #A6C1B9;
+  --color-texto-1: #F6F6F6;
+  --color-texto-2: #000000;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +18,23 @@
 }
 
 body {
-  background-color: #1F2023;
+  background-color: var(--color-fondo-body);
   font-family: "Roboto", sans-serif;
-  color: #000000;
+  color: var(--color-texto-2);
+}
+
+.barra__navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-fondo-legend-1);
+  color: var(--color-texto-1);
+  padding: 0.5rem 1rem;
+}
+
+.barra__navegacion__botones {
+  display: flex;
+  gap: 1rem;
 }
 
 .main {
@@ -29,10 +54,11 @@ body {
   font-weight: 700;
   font-style: normal;
   color: #F6F6F6;
-  border-top: 10px solid #3f6156;
-  border-bottom: 10px solid #3f6156;
+  border-top: 10px solid var(--color-fondo-legend-1);
+  border-bottom: 10px solid var(--color-fondo-legend-1);
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
+  margin: 1rem 0;
 }
 
 
@@ -52,26 +78,114 @@ body {
 .dot-divider span {
   width: 0.8rem;
   height: 0.8rem;
-  background-color: #D6E2DE;
+  background-color: var(--color-fondo-fieldset-1);
   border-radius: 50%;
 }
 
 /* ------------------------- */
 
 .fieldset {
-  background-color: #D6E2DE;
+  background-color: var(--color-fondo-fieldset-1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  padding: 2rem 1rem;
+}
+
+.fieldset:focus-within {
+  background-color: var(--color-fondo-fieldset-2);
 }
 
 .fieldset__legend {
-  background-color: #4D6D63;
+  background-color: var(--color-fondo-legend-1);
   color: #F6F6F6;
+  height: 2.2rem;
   padding: 0.3rem 1rem;
-  border-radius: 5px;
+  border-radius: 0.3rem;
   font-weight: bold;
+}
+
+.input {
+  width: 80%;
+  height: 1.5rem;
+  text-align: end;
+}
+
+.input:focus {
+  background-color: var(--color-fondo-legend-1);
+  outline: none;
+  color: var(--color-texto-1);
+  text-align: end;
+}
+
+.formulario__select {
+  width: 80%;
+  height: 1.5rem;
+}
+
+.textarea {
+  width: 80%;
+  height: 8rem;
+}
+
+.textarea:focus {
+  background-color: var(--color-fondo-legend-1);
+  outline: none;
+  color: var(--color-texto-1);
+}
+
+.fieldset__actividades {
+  background-color: var(--color-fondo-fieldset-1);
   display: flex;
-  align-items: center;
-  gap: 5px;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  padding: 2rem 1rem;
+}
+
+.fieldset__actividades:focus-within {
+  background-color: var(--color-fondo-fieldset-2);
+}
+
+.formulario__condiciones {
+  color: var(--color-texto-1);
+  line-height: 1.5rem;
+  margin: 1rem 0;
+}
+
+.formulario__botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.boton__estilo {
+  background-color: var(--color-fondo-legend-1);
+  color: #F6F6F6;
+  width: 8rem;
+  border: 0.1rem solid var(--color-fondo-legend-2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.boton__estilo__recordar {
+  color: #F6F6F6;
+  width: 8rem;
+  border: 0.1rem solid var(--color-fondo-legend-2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.boton__estilo:hover {
+  background-color: var(--color-fondo-fieldset-2);
+  color: var(--color-fondo-legend-1);
 }
