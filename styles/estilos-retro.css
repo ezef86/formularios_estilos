@@ -18,9 +18,10 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
-  background-image: url("../media/images/retro-background.jpg");
+  background-image: url("../media/images/retro.jpg");
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
