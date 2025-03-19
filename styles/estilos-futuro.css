@@ -14,8 +14,8 @@
   --color-texto: #EFE9D5;
   --color-titulo: #578FCA;
   --color-acento: #58a6ff;
-  --color-boton: #497D74;
-  --color-boton-hover: #71BBB2;
+  --color-boton: #2D336B;
+  --color-boton-hover: #7886C7;
 }
 
 body {
@@ -44,17 +44,17 @@ body {
   align-items: center;
 }
 
-.barra__navegacion__botones button {
+.boton__estilo {
   background-color: var(--color-boton);
   color: var(--color-texto);
-  border: none;
+  border: 1px solid var(--color-acento);
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.barra__navegacion__botones button:hover {
+.boton__estilo:hover {
   background-color: var(--color-boton-hover);
 }
 
@@ -147,27 +147,21 @@ body {
   margin: 1rem 0;
 }
 
-.boton__estilo {
-  background-color: var(--color-boton);
-  color: var(--color-texto);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.boton__estilo:hover {
-  background-color: var(--color-boton-hover);
-}
 
 .botonRecordarPresionado {
   background-color: red !important;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
   /* Ensure this style is applied */
 }
 
 .botonRecordarSinPresionar {
   background-color: green !important;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
   /* Ensure this style is applied */
 }
 
