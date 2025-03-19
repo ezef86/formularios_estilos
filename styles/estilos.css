@@ -189,28 +189,3 @@ body {
   background-color: var(--color-fondo-fieldset-2);
   color: var(--color-fondo-legend-1);
 }
-
-/* Media queries */
-@media (max-width: 1240px) {
-  .main {
-    width: 80%;
-  }
-
-  .barra__navegacion {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 530px) {
-  .radio_style_selection {
-    display: block;
-  }
-}
-
-@media (max-width: 450px) {
-  .barra__navegacion__botones {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
