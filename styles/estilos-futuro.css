@@ -189,3 +189,32 @@ body {
     box-shadow: 0 0 20px var(--color-acento), 0 0 30px var(--color-acento);
   }
 }
+
+/* Media queries */
+@media (max-width: 1240px) {
+  .main {
+    width: 90%;
+  }
+
+  .barra__navegacion {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .radio_style_selection {
+    display: block;
+  }
+
+  .fieldset__legend {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .barra__navegacion__botones {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

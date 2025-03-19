@@ -206,7 +206,7 @@ html {
 /* Media queries */
 @media (max-width: 1240px) {
   .main {
-    width: 80%;
+    width: 90%;
   }
 
   .barra__navegacion {
@@ -218,6 +218,10 @@ html {
 @media (max-width: 530px) {
   .radio_style_selection {
     display: block;
+  }
+
+  .fieldset__legend {
+    font-size: 0.6rem;
   }
 }
 
