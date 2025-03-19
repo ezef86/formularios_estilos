@@ -1,3 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-fondo-body: #4D55CC;
+  --color-fondo-legend: #211C84;
+  --color-fondo-fieldset: #161b22;
+  --color-form-focus: #0C0950;
+  --color-texto: #EFE9D5;
+  --color-titulo: #578FCA;
+  --color-acento: #58a6ff;
+  --color-boton: #497D74;
+  --color-boton-hover: #71BBB2;
+}
+
 body {
-  background-color: lightgreen;
+  background-color: var(--color-fondo-body);
+  color: var(--color-texto);
+  font-family: "Roboto", sans-serif;
+}
+
+#background-video {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.barra__navegacion {
+  background-color: var(--color-fondo-legend);
+  color: var(--color-texto);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barra__navegacion__botones button {
+  background-color: var(--color-boton);
+  color: var(--color-texto);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.barra__navegacion__botones button:hover {
+  background-color: var(--color-boton-hover);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.titulo {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-titulo);
+  margin: 1rem 0;
+}
+
+.formulario {
+  width: 100%;
+  background-color: var(--color-fondo-fieldset);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px var(--color-acento);
+  animation: glow 2s infinite;
+}
+
+.fieldset {
+  background-color: var(--color-fondo-fieldset);
+  border: 1px solid var(--color-acento);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.fieldset__actividades {
+  background-color: var(--color-fondo-fieldset-1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  padding: 2rem 1rem;
+}
+
+.fieldset__legend {
+  background-color: var(--color-fondo-legend);
+  color: var(--color-acento);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+}
+
+.fieldset:focus-within {
+  background-color: var(--color-form-focus);
+}
+
+.fieldset__actividades:focus-within {
+  background-color: var(--color-form-focus);
+}
+
+.input,
+.textarea,
+.formulario__select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--color-acento);
+  border-radius: 0.3rem;
+  background-color: var(--color-fondo-body);
+  color: var(--color-texto);
+}
+
+.input:focus,
+.textarea:focus,
+.formulario__select:focus {
+  outline: none;
+  border-color: var(--color-boton);
+  background-color: var(--color-fondo-legend);
+}
+
+.formulario__botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.boton__estilo {
+  background-color: var(--color-boton);
+  color: var(--color-texto);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton__estilo:hover {
+  background-color: var(--color-boton-hover);
+}
+
+.botonRecordarPresionado {
+  background-color: red !important;
+  /* Ensure this style is applied */
+}
+
+.botonRecordarSinPresionar {
+  background-color: green !important;
+  /* Ensure this style is applied */
+}
+
+.dot-divider span {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--color-acento);
+  border-radius: 50%;
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px var(--color-acento);
+  }
+
+  50% {
+    box-shadow: 0 0 20px var(--color-acento), 0 0 30px var(--color-acento);
+  }
 }

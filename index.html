@@ -9,28 +9,46 @@
 		<style>
 			.botonRecordarPresionado {
 				background-color: red;
+				color: white;
+				box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+				transform: translateY(2px);
 			}
 			.botonRecordarSinPresionar {
 				background-color: green;
+				color: white;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+				transform: none;
 			}
 		</style>
 	</head>
 	<body>
+		<video
+			autoplay
+			muted
+			loop
+			playsinline
+			id="background-video"
+			style="display: none"
+		>
+			<source src="./media/videos/futuristic.mp4" type="video/mp4" />
+		</video>
 		<nav class="barra__navegacion">
 			<div class="barra__navegacion__botones">
-        <button class="boton__estilo" id="botonCambiarEstilos">Cambiar estilos</button>
-        <button class="boton__estilo" id="botonCambiarEstilosAleatorio">
-          🎲
-        </button>
-        <button class="boton__estilo__recordar" id="botonRecordarEstilos">Recordar</button>
-      </div>
+				<button class="boton__estilo" id="botonCambiarEstilos">
+					Cambiar estilos
+				</button>
+				<button class="boton__estilo" id="botonCambiarEstilosAleatorio">
+					🎲
+				</button>
+				<button class="boton__estilo__recordar" id="botonRecordarEstilos">
+					Recordar
+				</button>
+			</div>
 
 			<div>
 				<label for="selectEstilos">Seleccionar estilos:</label>
 				<select name="selectEstilos" id="selectEstilos">
-					<option value="estilos-predeterminados">
-						Predeterminado
-					</option>
+					<option value="estilos-predeterminados">Predeterminado</option>
 					<option value="estilos-retro">Retro</option>
 					<option value="estilos-futuro">Futuro</option>
 					<option value="sin-estilos">Sin estilos</option>
@@ -44,8 +62,7 @@
 					id="estilos-radio-predeterminado"
 					value="estilos-radio-predeterminado"
 				/>
-				<label for="estilos-radio-predeterminado"
-					>Predeterminado</label>
+				<label for="estilos-radio-predeterminado">Predeterminado</label>
 				<input
 					type="radio"
 					name="radioEstilos"
@@ -73,7 +90,7 @@
 		<main class="main">
 			<h1 class="titulo">Vení al Gym!💪</h1>
 
-			<form action="#" class="formulario">
+			<form action="#" class="formulario" novalidate>
 				<fieldset class="fieldset">
 					<legend class="fieldset__legend">🙋‍♂️ Datos Personales 👀</legend>
 					<label for="nombre">Nombre: *</label>
@@ -277,5 +294,6 @@
 		</main>
 
 		<script src="./js/index.js"></script>
+		<script src="./js/validar.js"></script>
 	</body>
 </html>

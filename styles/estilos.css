@@ -96,6 +96,21 @@ body {
   padding: 2rem 1rem;
 }
 
+.fieldset__actividades {
+  background-color: var(--color-fondo-fieldset-1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  padding: 2rem 1rem;
+}
+
+.fieldset__actividades:focus-within {
+  background-color: var(--color-fondo-fieldset-2);
+}
+
 .fieldset:focus-within {
   background-color: var(--color-fondo-fieldset-2);
 }
@@ -138,20 +153,7 @@ body {
   color: var(--color-texto-1);
 }
 
-.fieldset__actividades {
-  background-color: var(--color-fondo-fieldset-1);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  border-radius: 0.3rem;
-  padding: 2rem 1rem;
-}
 
-.fieldset__actividades:focus-within {
-  background-color: var(--color-fondo-fieldset-2);
-}
 
 .formulario__condiciones {
   color: var(--color-texto-1);

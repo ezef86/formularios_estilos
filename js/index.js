@@ -17,6 +17,11 @@ const removeOriginalStylesheet = () => {
 let currentStyle = 0;
 
 const botonCambiarEstilos = document.getElementById("botonCambiarEstilos");
+const toggleVideoVisibility = (isVisible) => {
+	const video = document.getElementById("background-video");
+	video.style.display = isVisible ? "block" : "none";
+};
+
 botonCambiarEstilos.addEventListener("click", () => {
 	// Remove original stylesheet
 	removeOriginalStylesheet();
@@ -26,7 +31,7 @@ botonCambiarEstilos.addEventListener("click", () => {
 	styles.rel = "stylesheet";
 	styles.type = "text/css";
 
-	// If there was a stylesheet path on the localStorage, remove it
+	// Reset localStorage and button styles
 	localStorage.removeItem("currentStylesheetPath");
 	botonRecordarEstilos.innerHTML = "Recordar Estilos";
 	botonRecordarEstilos.classList.remove("botonRecordarPresionado");
@@ -41,7 +46,7 @@ botonCambiarEstilos.addEventListener("click", () => {
 
 		selectHojasDeEstilos.value = "estilos-retro";
 		document.getElementById("estilos-radio-retro").checked = true;
-		return;
+		toggleVideoVisibility(false); // Hide video
 	} else if (currentStyle === 1) {
 		styles.href = stylesNames[2];
 		document.head.appendChild(styles);
@@ -49,7 +54,7 @@ botonCambiarEstilos.addEventListener("click", () => {
 
 		selectHojasDeEstilos.value = "estilos-futuro";
 		document.getElementById("estilos-radio-futuro").checked = true;
-		return;
+		toggleVideoVisibility(true); // Show video
 	} else if (currentStyle === 2) {
 		styles.href = stylesNames[0];
 		document.head.appendChild(styles);
@@ -57,7 +62,7 @@ botonCambiarEstilos.addEventListener("click", () => {
 
 		selectHojasDeEstilos.value = "estilos-predeterminados";
 		document.getElementById("estilos-radio-predeterminado").checked = true;
-		return;
+		toggleVideoVisibility(false); // Hide video
 	}
 });
 
@@ -88,6 +93,7 @@ botonCambiarEstilosAleatorio.addEventListener("click", () => {
 
 		selectHojasDeEstilos.value = "sin-estilos";
 		document.getElementById("estilos-radio-sin").checked = true;
+		toggleVideoVisibility(false); // Hide video
 		return;
 	} else {
 		document.getElementById("botonRecordarEstilos").disabled = false;
@@ -98,23 +104,21 @@ botonCambiarEstilosAleatorio.addEventListener("click", () => {
 
 			selectHojasDeEstilos.value = "estilos-predeterminados";
 			document.getElementById("estilos-radio-predeterminado").checked = true;
-			return;
+			toggleVideoVisibility(false); // Hide video
 		} else if (randomNumber === 1) {
 			styles.href = stylesNames[1];
 			document.head.appendChild(styles);
-			currentStyle = 2;
 
 			selectHojasDeEstilos.value = "estilos-retro";
 			document.getElementById("estilos-radio-retro").checked = true;
-			return;
+			toggleVideoVisibility(false); // Hide video
 		} else if (randomNumber === 2) {
 			styles.href = stylesNames[2];
 			document.head.appendChild(styles);
-			currentStyle = 0;
 
 			selectHojasDeEstilos.value = "estilos-futuro";
 			document.getElementById("estilos-radio-futuro").checked = true;
-			return;
+			toggleVideoVisibility(true); // Show video
 		}
 	}
 });
@@ -192,18 +196,22 @@ setTimeout(() => {
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		selectHojasDeEstilos.value = "estilos-predeterminados";
 		document.getElementById("estilos-radio-predeterminado").checked = true;
+		toggleVideoVisibility(false); // Hide video
 	} else if (styleSheetRelativePath === "estilos-retro.css") {
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		selectHojasDeEstilos.value = "estilos-retro";
 		document.getElementById("estilos-radio-retro").checked = true;
+		toggleVideoVisibility(false); // Hide video
 	} else if (styleSheetRelativePath === "estilos-futuro.css") {
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		selectHojasDeEstilos.value = "estilos-futuro";
 		document.getElementById("estilos-radio-futuro").checked = true;
+		toggleVideoVisibility(true); // Show video
 	} else {
 		document.getElementById("botonRecordarEstilos").disabled = true;
 		selectHojasDeEstilos.value = "sin-estilos";
 		document.getElementById("estilos-radio-sin").checked = true;
+		toggleVideoVisibility(false); // Hide video
 	}
 }, 100);
 
@@ -212,6 +220,7 @@ selectHojasDeEstilos.addEventListener("change", function () {
 		document.getElementById("botonRecordarEstilos").disabled = true;
 		removeOriginalStylesheet();
 		document.getElementById("estilos-radio-sin").checked = true;
+		toggleVideoVisibility(false); // Hide video
 	} else if (this.value === "estilos-futuro") {
 		removeOriginalStylesheet();
 		const styles = document.createElement("link");
@@ -221,6 +230,7 @@ selectHojasDeEstilos.addEventListener("change", function () {
 		document.head.appendChild(styles);
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		document.getElementById("estilos-radio-futuro").checked = true;
+		toggleVideoVisibility(true); // Show video
 
 		// If there was a stylesheet path on the localStorage, remove it
 		localStorage.removeItem("currentStylesheetPath");
@@ -236,6 +246,7 @@ selectHojasDeEstilos.addEventListener("change", function () {
 		document.head.appendChild(styles);
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		document.getElementById("estilos-radio-retro").checked = true;
+		toggleVideoVisibility(false); // Hide video
 
 		// If there was a stylesheet path on the localStorage, remove it
 		localStorage.removeItem("currentStylesheetPath");
@@ -251,6 +262,7 @@ selectHojasDeEstilos.addEventListener("change", function () {
 		document.head.appendChild(styles);
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		document.getElementById("estilos-radio-predeterminado").checked = true;
+		toggleVideoVisibility(false); // Hide video
 
 		// If there was a stylesheet path on the localStorage, remove it
 		localStorage.removeItem("currentStylesheetPath");
@@ -271,6 +283,7 @@ function changeRadioInput(event) {
 		removeOriginalStylesheet();
 		selectHojasDeEstilos.value = "sin-estilos";
 		document.getElementById("estilos-radio-sin").checked = true;
+		toggleVideoVisibility(false); // Hide video
 	} else if (event.target.id === "estilos-radio-futuro") {
 		removeOriginalStylesheet();
 		const styles = document.createElement("link");
@@ -281,6 +294,7 @@ function changeRadioInput(event) {
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		document.getElementById("estilos-radio-futuro").checked = true;
 		selectHojasDeEstilos.value = "estilos-futuro";
+		toggleVideoVisibility(true); // Show video
 
 		// If there was a stylesheet path on the localStorage, remove it
 		localStorage.removeItem("currentStylesheetPath");
@@ -297,6 +311,7 @@ function changeRadioInput(event) {
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		document.getElementById("estilos-radio-retro").checked = true;
 		selectHojasDeEstilos.value = "estilos-retro";
+		toggleVideoVisibility(false); // Hide video
 
 		// If there was a stylesheet path on the localStorage, remove it
 		localStorage.removeItem("currentStylesheetPath");
@@ -313,6 +328,7 @@ function changeRadioInput(event) {
 		document.getElementById("botonRecordarEstilos").disabled = false;
 		document.getElementById("estilos-radio-predeterminado").checked = true;
 		selectHojasDeEstilos.value = "estilos-predeterminados";
+		toggleVideoVisibility(false); // Hide video
 
 		// If there was a stylesheet path on the localStorage, remove it
 		localStorage.removeItem("currentStylesheetPath");
@@ -323,5 +339,68 @@ function changeRadioInput(event) {
 }
 
 document.querySelectorAll("input[name='radioEstilos']").forEach((input) => {
-	input.addEventListener("change", changeRadioInput);
+	input.addEventListener("change", (event) => {
+		if (event.target.id === "estilos-radio-sin") {
+			// document.getElementById('botonRecordarEstilos').disabled = true;
+			// removeOriginalStylesheet();
+			// selectHojasDeEstilos.value = "sin-estilos";
+
+			document.getElementById("botonRecordarEstilos").disabled = true;
+			removeOriginalStylesheet();
+			selectHojasDeEstilos.value = "sin-estilos";
+			document.getElementById("estilos-radio-sin").checked = true;
+			toggleVideoVisibility(false); // Hide video
+		} else if (event.target.id === "estilos-radio-futuro") {
+			removeOriginalStylesheet();
+			const styles = document.createElement("link");
+			styles.rel = "stylesheet";
+			styles.type = "text/css";
+			styles.href = stylesNames[2];
+			document.head.appendChild(styles);
+			document.getElementById("botonRecordarEstilos").disabled = false;
+			document.getElementById("estilos-radio-futuro").checked = true;
+			selectHojasDeEstilos.value = "estilos-futuro";
+			toggleVideoVisibility(true); // Show video
+
+			// If there was a stylesheet path on the localStorage, remove it
+			localStorage.removeItem("currentStylesheetPath");
+			botonRecordarEstilos.innerHTML = "Recordar Estilos";
+			botonRecordarEstilos.classList.remove("botonRecordarPresionado");
+			botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
+		} else if (event.target.id === "estilos-radio-retro") {
+			removeOriginalStylesheet();
+			const styles = document.createElement("link");
+			styles.rel = "stylesheet";
+			styles.type = "text/css";
+			styles.href = stylesNames[1];
+			document.head.appendChild(styles);
+			document.getElementById("botonRecordarEstilos").disabled = false;
+			document.getElementById("estilos-radio-retro").checked = true;
+			selectHojasDeEstilos.value = "estilos-retro";
+			toggleVideoVisibility(false); // Hide video
+
+			// If there was a stylesheet path on the localStorage, remove it
+			localStorage.removeItem("currentStylesheetPath");
+			botonRecordarEstilos.innerHTML = "Recordar Estilos";
+			botonRecordarEstilos.classList.remove("botonRecordarPresionado");
+			botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
+		} else if (event.target.id === "estilos-radio-predeterminado") {
+			removeOriginalStylesheet();
+			const styles = document.createElement("link");
+			styles.rel = "stylesheet";
+			styles.type = "text/css";
+			styles.href = stylesNames[0];
+			document.head.appendChild(styles);
+			document.getElementById("botonRecordarEstilos").disabled = false;
+			document.getElementById("estilos-radio-predeterminado").checked = true;
+			selectHojasDeEstilos.value = "estilos-predeterminados";
+			toggleVideoVisibility(false); // Hide video
+
+			// If there was a stylesheet path on the localStorage, remove it
+			localStorage.removeItem("currentStylesheetPath");
+			botonRecordarEstilos.innerHTML = "Recordar Estilos";
+			botonRecordarEstilos.classList.remove("botonRecordarPresionado");
+			botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
+		}
+	});
 });
