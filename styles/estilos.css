@@ -21,30 +21,23 @@ body {
   background-color: var(--color-fondo-body);
   font-family: "Roboto", sans-serif;
   color: var(--color-texto-2);
-  padding: 0 1rem;
 }
 
 .barra__navegacion {
+  background-color: var(--color-fondo-legend-1);
+  color: var(--color-texto-1);
+  padding: 1rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-fondo-legend-1);
-  color: var(--color-texto-1);
-  padding: 0.5rem 1rem;
-}
-
-.barra__navegacion__botones {
-  display: flex;
-  gap: 1rem;
 }
 
 .main {
   max-width: 40rem;
   margin: 0 auto;
+  padding: 0 1rem;
 }
-
-
-
 
 .titulo {
   text-align: center;
@@ -170,20 +163,28 @@ body {
 .boton__estilo {
   background-color: var(--color-fondo-legend-1);
   color: #F6F6F6;
-  width: 8rem;
-  border: 0.1rem solid var(--color-fondo-legend-2);
+  border: 1px solid var(--color-fondo-legend-2);
   padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.boton__estilo__recordar {
-  color: #F6F6F6;
-  width: 8rem;
-  border: 0.1rem solid var(--color-fondo-legend-2);
+.botonRecordarSinPresionar {
+  background-color: green !important;
   padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
   cursor: pointer;
+  /* Ensure this style is applied */
+}
+
+.botonRecordarPresionado {
+  background-color: red !important;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  /* Ensure this style is applied */
 }
 
 .boton__estilo:hover {
