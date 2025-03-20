@@ -22,16 +22,6 @@
 		</style>
 	</head>
 	<body>
-		<video
-			autoplay
-			muted
-			loop
-			playsinline
-			id="background-video"
-			style="display: none"
-		>
-			<source src="./media/videos/futuro.mp4" type="video/mp4" />
-		</video>
 		<nav class="barra__navegacion">
 			<div class="barra__navegacion__botones">
 				<button class="boton__estilo" id="botonCambiarEstilos">
@@ -87,6 +77,16 @@
 			</div>
 		</nav>
 
+		<video
+			autoplay
+			muted
+			loop
+			playsinline
+			id="background-video"
+			style="display: none"
+		>
+			<source src="./media/videos/futuro.mp4" type="video/mp4" />
+		</video>
 		<main class="main">
 			<h1 class="titulo">Vení al Gym!💪</h1>
 
@@ -102,6 +102,7 @@
 						required
 						autofocus
 					/>
+					<br />
 					<label for="apellido">Apellido: *</label>
 					<input
 						class="input"
@@ -110,6 +111,7 @@
 						name="apellido"
 						required
 					/>
+					<br />
 					<label for="documento">Documento: *</label>
 					<input
 						class="input"
@@ -118,6 +120,7 @@
 						name="documento"
 						required
 					/>
+					<br />
 					<label for="nacionalidad">Nacionalidad: *</label>
 					<select
 						class="formulario__select"
@@ -130,12 +133,12 @@
 						<option value="uruguaya">Uruguaya</option>
 						<option value="otra">Otra</option>
 					</select>
+					<br />
 					<label for="informacion-adicional">Contanos un poco de vos...</label>
 					<textarea
 						class="textarea"
 						name="informacion-adicional"
 						id="informacion-adicional"
-						rows="8"
 					></textarea>
 					<div>Sexo: *</div>
 					<div>
