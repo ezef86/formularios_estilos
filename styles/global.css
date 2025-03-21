@@ -1,0 +1,82 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.barra__navegacion {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.barra__navegacion__botones,
+.barra__navegacion__titulo__radio,
+.barra__navegacion_radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.textarea {
+    resize: vertical;
+    height: 8rem;
+}
+
+.formulario__botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.boton__estilo {
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botonRecordarPresionado {
+    background-color: red !important;
+    color: white;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+}
+
+.botonRecordarSinPresionar {
+    background-color: green !important;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transform: none;
+}
+
+.botonRecordarSinPresionar,
+.botonRecordarPresionado {
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.dot-divider {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.7rem 0;
+}
+
+.dot-divider span {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+}

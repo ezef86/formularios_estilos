@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 :root {
   --color-fondo-body: #4D55CC;
@@ -42,32 +37,22 @@ body {
 .barra__navegacion {
   background-color: var(--color-fondo-legend);
   color: var(--color-texto);
-  padding: 1rem;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
+
+.barra__navegacion__titulo__radio {
+  justify-content: center;
+}
+
 
 .boton__estilo {
   background-color: var(--color-boton);
   color: var(--color-texto);
   border: 1px solid var(--color-acento);
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .boton__estilo:hover {
   background-color: var(--color-boton-hover);
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  max-width: 40rem;
-  margin: 0 2rem;
 }
 
 .titulo {
@@ -105,6 +90,7 @@ body {
   margin-bottom: 1rem;
   margin-top: 1rem;
   border-radius: 0.3rem;
+  border: 1px solid var(--color-acento);
   padding: 2rem 1rem;
 }
 
@@ -136,10 +122,6 @@ body {
   color: var(--color-texto);
 }
 
-.textarea {
-  resize: vertical;
-  height: 8rem;
-}
 
 .input:focus,
 .textarea:focus,
@@ -149,40 +131,12 @@ body {
   background-color: var(--color-fondo-legend);
 }
 
-.formulario__botones {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-
-.botonRecordarPresionado {
-  background-color: red !important;
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-
-  /* Ensure this style is applied */
-}
-
-.botonRecordarSinPresionar {
-  background-color: green !important;
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  /* Ensure this style is applied */
-}
 
 .dot-divider span {
-  width: 0.8rem;
-  height: 0.8rem;
   background-color: var(--color-acento);
-  border-radius: 50%;
-}
+  }
 
 @keyframes glow {
-
   0%,
   100% {
     box-shadow: 0 0 10px var(--color-acento);
@@ -190,30 +144,5 @@ body {
 
   50% {
     box-shadow: 0 0 20px var(--color-acento), 0 0 30px var(--color-acento);
-  }
-}
-
-/* Media queries */
-@media (max-width: 768px) {
-  .barra__navegacion {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 530px) {
-  .radio_style_selection {
-    display: block;
-  }
-
-  .fieldset__legend {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 450px) {
-  .barra__navegacion__botones {
-    flex-direction: column;
-    gap: 1rem;
   }
 }

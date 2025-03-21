@@ -4,22 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Afiliación</title>
+		<link rel="stylesheet" href="./styles/global.css" />
 		<link rel="stylesheet" href="./styles/estilos.css" id="estilo-original" />
-
-		<style>
-			.botonRecordarPresionado {
-				background-color: red;
-				color: white;
-				box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
-				transform: translateY(2px);
-			}
-			.botonRecordarSinPresionar {
-				background-color: green;
-				color: white;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-				transform: none;
-			}
-		</style>
 	</head>
 	<body>
 		<nav class="barra__navegacion">
@@ -44,36 +30,46 @@
 					<option value="sin-estilos">Sin estilos</option>
 				</select>
 			</div>
-			<div>
-				<span>Seleccionar estilos:</span>
-				<input
-					type="radio"
-					name="radioEstilos"
-					id="estilos-radio-predeterminado"
-					value="estilos-radio-predeterminado"
-				/>
-				<label for="estilos-radio-predeterminado">Predeterminado</label>
-				<input
-					type="radio"
-					name="radioEstilos"
-					id="estilos-radio-retro"
-					value="estilos-radio-retro"
-				/>
-				<label for="estilos-radio-retro">Retro</label>
-				<input
-					type="radio"
-					name="radioEstilos"
-					id="estilos-radio-futuro"
-					value="estilos-radio-futuro"
-				/>
-				<label for="estilos-radio-futuro">Futuro</label>
-				<input
-					type="radio"
-					name="radioEstilos"
-					id="estilos-radio-sin"
-					value="estilos-radio-sin"
-				/>
-				<label for="estilos-radio-sin">Sin estilo</label>
+			<div class="barra__navegacion__titulo__radio">
+				<div>Seleccionar estilos:</div>
+				<div class="barra__navegacion_radio">
+					<div>
+						<input
+							type="radio"
+							name="radioEstilos"
+							id="estilos-radio-predeterminado"
+							value="estilos-radio-predeterminado"
+						/>
+						<label for="estilos-radio-predeterminado">Predeterminado</label>
+					</div>
+					<div>
+						<input
+							type="radio"
+							name="radioEstilos"
+							id="estilos-radio-retro"
+							value="estilos-radio-retro"
+						/>
+						<label for="estilos-radio-retro">Retro</label>
+					</div>
+					<div>
+						<input
+							type="radio"
+							name="radioEstilos"
+							id="estilos-radio-futuro"
+							value="estilos-radio-futuro"
+						/>
+						<label for="estilos-radio-futuro">Futuro</label>
+					</div>
+					<div>
+						<input
+							type="radio"
+							name="radioEstilos"
+							id="estilos-radio-sin"
+							value="estilos-radio-sin"
+						/>
+						<label for="estilos-radio-sin">Sin estilo</label>
+					</div>
+				</div>
 			</div>
 		</nav>
 

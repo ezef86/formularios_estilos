@@ -7,9 +7,31 @@ const stylesNames = [
 
 // Funciones de ayuda
 const removeOriginalStylesheet = () => {
-	const styleToRemove = document.querySelector('link[rel="stylesheet"]');
-	if (styleToRemove) {
-		styleToRemove.remove();
+	const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+	stylesheets.forEach((stylesheet) => {
+		if (!stylesheet.href.includes("global.css")) {
+			stylesheet.remove();
+		}
+	});
+};
+
+const removeAllStylesheets = () => {
+	const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+	stylesheets.forEach((stylesheet) => {
+		stylesheet.remove();
+	});
+};
+
+const addGlobalStylesheet = () => {
+	const globalStyles = document.querySelector(
+		'link[href="./styles/global.css"]'
+	);
+	if (!globalStyles) {
+		const styles = document.createElement("link");
+		styles.rel = "stylesheet";
+		styles.type = "text/css";
+		styles.href = "./styles/global.css";
+		document.head.appendChild(styles);
 	}
 };
 
@@ -23,8 +45,11 @@ const toggleVideoVisibility = (isVisible) => {
 };
 
 botonCambiarEstilos.addEventListener("click", () => {
-	// Remove original stylesheet
+	// Remove original stylesheet but keep global.css
 	removeOriginalStylesheet();
+
+	// Reapply global.css
+	addGlobalStylesheet();
 
 	// Create a new stylesheet
 	const styles = document.createElement("link");
@@ -93,9 +118,12 @@ botonCambiarEstilosAleatorio.addEventListener("click", () => {
 
 		selectHojasDeEstilos.value = "sin-estilos";
 		document.getElementById("estilos-radio-sin").checked = true;
+		removeAllStylesheets(); // Ensure all stylesheets are removed
 		toggleVideoVisibility(false); // Hide video
 		return;
 	} else {
+		addGlobalStylesheet(); // Reapply global.css
+
 		document.getElementById("botonRecordarEstilos").disabled = false;
 
 		if (randomNumber === 0) {
@@ -218,11 +246,12 @@ setTimeout(() => {
 selectHojasDeEstilos.addEventListener("change", function () {
 	if (this.value === "sin-estilos") {
 		document.getElementById("botonRecordarEstilos").disabled = true;
-		removeOriginalStylesheet();
+		removeAllStylesheets(); // Remove all stylesheets, including global.css
 		document.getElementById("estilos-radio-sin").checked = true;
 		toggleVideoVisibility(false); // Hide video
 	} else if (this.value === "estilos-futuro") {
-		removeOriginalStylesheet();
+		addGlobalStylesheet(); // Reapply global.css
+		removeOriginalStylesheet(); // Keep global.css
 		const styles = document.createElement("link");
 		styles.rel = "stylesheet";
 		styles.type = "text/css";
@@ -238,7 +267,8 @@ selectHojasDeEstilos.addEventListener("change", function () {
 		botonRecordarEstilos.classList.remove("botonRecordarPresionado");
 		botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
 	} else if (this.value === "estilos-retro") {
-		removeOriginalStylesheet();
+		addGlobalStylesheet(); // Reapply global.css
+		removeOriginalStylesheet(); // Keep global.css
 		const styles = document.createElement("link");
 		styles.rel = "stylesheet";
 		styles.type = "text/css";
@@ -254,7 +284,8 @@ selectHojasDeEstilos.addEventListener("change", function () {
 		botonRecordarEstilos.classList.remove("botonRecordarPresionado");
 		botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
 	} else if (this.value === "estilos-predeterminados") {
-		removeOriginalStylesheet();
+		addGlobalStylesheet(); // Reapply global.css
+		removeOriginalStylesheet(); // Keep global.css
 		const styles = document.createElement("link");
 		styles.rel = "stylesheet";
 		styles.type = "text/css";
@@ -280,12 +311,13 @@ function changeRadioInput(event) {
 		// selectHojasDeEstilos.value = "sin-estilos";
 
 		document.getElementById("botonRecordarEstilos").disabled = true;
-		removeOriginalStylesheet();
+		removeAllStylesheets(); // Remove all stylesheets, including global.css
 		selectHojasDeEstilos.value = "sin-estilos";
 		document.getElementById("estilos-radio-sin").checked = true;
 		toggleVideoVisibility(false); // Hide video
 	} else if (event.target.id === "estilos-radio-futuro") {
-		removeOriginalStylesheet();
+		addGlobalStylesheet(); // Reapply global.css
+		removeOriginalStylesheet(); // Keep global.css
 		const styles = document.createElement("link");
 		styles.rel = "stylesheet";
 		styles.type = "text/css";
@@ -302,7 +334,8 @@ function changeRadioInput(event) {
 		botonRecordarEstilos.classList.remove("botonRecordarPresionado");
 		botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
 	} else if (event.target.id === "estilos-radio-retro") {
-		removeOriginalStylesheet();
+		addGlobalStylesheet(); // Reapply global.css
+		removeOriginalStylesheet(); // Keep global.css
 		const styles = document.createElement("link");
 		styles.rel = "stylesheet";
 		styles.type = "text/css";
@@ -319,7 +352,8 @@ function changeRadioInput(event) {
 		botonRecordarEstilos.classList.remove("botonRecordarPresionado");
 		botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
 	} else if (event.target.id === "estilos-radio-predeterminado") {
-		removeOriginalStylesheet();
+		addGlobalStylesheet(); // Reapply global.css
+		removeOriginalStylesheet(); // Keep global.css
 		const styles = document.createElement("link");
 		styles.rel = "stylesheet";
 		styles.type = "text/css";
@@ -346,12 +380,13 @@ document.querySelectorAll("input[name='radioEstilos']").forEach((input) => {
 			// selectHojasDeEstilos.value = "sin-estilos";
 
 			document.getElementById("botonRecordarEstilos").disabled = true;
-			removeOriginalStylesheet();
+			removeAllStylesheets(); // Remove all stylesheets, including global.css
 			selectHojasDeEstilos.value = "sin-estilos";
 			document.getElementById("estilos-radio-sin").checked = true;
 			toggleVideoVisibility(false); // Hide video
 		} else if (event.target.id === "estilos-radio-futuro") {
-			removeOriginalStylesheet();
+			addGlobalStylesheet(); // Reapply global.css
+			removeOriginalStylesheet(); // Keep global.css
 			const styles = document.createElement("link");
 			styles.rel = "stylesheet";
 			styles.type = "text/css";
@@ -368,7 +403,8 @@ document.querySelectorAll("input[name='radioEstilos']").forEach((input) => {
 			botonRecordarEstilos.classList.remove("botonRecordarPresionado");
 			botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
 		} else if (event.target.id === "estilos-radio-retro") {
-			removeOriginalStylesheet();
+			addGlobalStylesheet(); // Reapply global.css
+			removeOriginalStylesheet(); // Keep global.css
 			const styles = document.createElement("link");
 			styles.rel = "stylesheet";
 			styles.type = "text/css";
@@ -385,7 +421,8 @@ document.querySelectorAll("input[name='radioEstilos']").forEach((input) => {
 			botonRecordarEstilos.classList.remove("botonRecordarPresionado");
 			botonRecordarEstilos.classList.add("botonRecordarSinPresionar");
 		} else if (event.target.id === "estilos-radio-predeterminado") {
-			removeOriginalStylesheet();
+			addGlobalStylesheet(); // Reapply global.css
+			removeOriginalStylesheet(); // Keep global.css
 			const styles = document.createElement("link");
 			styles.rel = "stylesheet";
 			styles.type = "text/css";
